@@ -1,40 +1,17 @@
 package com.mealkitland.cart.domain;
 
+import java.util.Objects;
+
 public class CartDTO {
-	private int cartTotal;
-	private Long subscribeId;
-	private Long userId;
+
 	private Long productId;
 	private String productName;
-	private	int productPrice;
-	private int productTypeDate;
+	private int productPrice;
+	private String productTypeDate;
+	private int subscribeCount;
 	
 	public CartDTO() {
 		super();
-	}
-
-	public int getCartTotal() {
-		return cartTotal;
-	}
-
-	public void setCartTotal(int cartTotal) {
-		this.cartTotal = cartTotal;
-	}
-
-	public Long getSubscribeId() {
-		return subscribeId;
-	}
-
-	public void setSubscribeId(Long subscribeId) {
-		this.subscribeId = subscribeId;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
 	}
 
 	public Long getProductId() {
@@ -61,12 +38,47 @@ public class CartDTO {
 		this.productPrice = productPrice;
 	}
 
-	public int getProductTypeDate() {
+	public String getProductTypeDate() {
 		return productTypeDate;
 	}
 
-	public void setProductTypeDate(int productTypeDate) {
+	public void setProductTypeDate(String productTypeDate) {
 		this.productTypeDate = productTypeDate;
+	}
+
+
+
+	public int getSubscribeCount() {
+		return subscribeCount;
+	}
+
+	public void setSubscribeCount(int subscribeCount) {
+		this.subscribeCount = subscribeCount;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "CartDTO [productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
+				+ ", productTypeDate=" + productTypeDate + ", subscribeCount=" + subscribeCount + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(productId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CartDTO other = (CartDTO) obj;
+		return Objects.equals(productId, other.productId);
 	}
 	
 	

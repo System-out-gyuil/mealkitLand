@@ -15,8 +15,8 @@
 		<typeAlias type="com.mealkitland.announce.domain.AnnounceVO" alias="announceVO"/>
 		<typeAlias type="com.mealkitland.subscribe.domain.SubscribeVO" alias="subscribeVO"/>
 		<typeAlias type="com.mealkitland.subscribe.domain.SubscribeDTO" alias="subscribeDTO"/>
-		<typeAlias type="com.mealkitland.cart.domain.CartVO" alias="cartVO"/>
-		<typeAlias type="com.mealkitland.cart.domain.CartVO" alias="cartDTO"/>
+		
+		<typeAlias type="com.mealkitland.cart.domain.CartDTO" alias="cartDTO"/>
 
 		
 		
@@ -39,6 +39,7 @@
       <mapper resource="com/mealkitland/mapper/boardMapper.xml"/>
       <mapper resource="com/mealkitland/mapper/announceMapper.xml"/>
       <mapper resource="com/mealkitland/mapper/subscribeMapper.xml"/>
+      <mapper resource="com/mealkitland/mapper/cartMapper.xml"/>
       
    </mappers>
    

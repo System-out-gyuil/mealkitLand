@@ -1,5 +1,7 @@
 package com.mealkitland.cart.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.mealkitland.cart.domain.CartDTO;
@@ -12,7 +14,9 @@ public class CartDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
- public CartDTO select(Long userId) {
-	 return sqlSession.selectOne("cart.select",userId);
- }
+	
+	public List<CartDTO> select(Long userId){
+		return sqlSession.selectList("cart.select",userId);
+	}
+
 }

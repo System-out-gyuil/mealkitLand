@@ -55,5 +55,16 @@
   	<servlet-name>CartOk</servlet-name>
   	<url-pattern>*.cart</url-pattern>
   </servlet-mapping>
+  
+    <!-- 배송조회 -->
+      <servlet>
+  	<servlet-name>DeliveryOk</servlet-name>
+  	<servlet-class>com.mealkitland.delivery.DeliveryFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeliveryOk</servlet-name>
+  	<url-pattern>*.delivery</url-pattern>
+  </servlet-mapping>
+  
 
 </web-app>

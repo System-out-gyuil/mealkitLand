@@ -7,7 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>배송 조회</title>
-    <link rel="stylesheet" href="../../static/css/hdh/mypage3.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/hdh/mypage3.css">
+    <style>
+    	.tbl{
+    		    text-align: center;
+    	}
+    </style>
 </head>
 <body>
     <div class="wrap" style>
@@ -34,13 +39,13 @@
                                           <a href="${pageContext.request.contextPath}/subscribeOk.subscribe">나의 구독내역</a>
                                         </li>
                                         <li class>
-                                            <a>배송 조회</a>
+                                            <a href="${pageContext.request.contextPath}/deliveryOk.delivery">배송조회</a>
                                         </li>
                                         <li class>
                                             <a>결제/취소내역</a>
                                         </li>
                                         <li class>
-                                            <a>장바구니</a>
+                                           <a href="${pageContext.request.contextPath}/cartOk.cart">장바구니</a>
                                         </li>
                                         <li class>
                                             <a>내 게시글 수정/삭제</a>
@@ -57,40 +62,25 @@
                             <h3 class="title-menu">배송 조회</h3>
                         </div>
                         <div class="board-list" id="tbl-my-delivery">
-                            <table>
+                            <table class="tbl">
                                 <caption>배송 조회</caption>
-                                <colgroup>
-                                    <col style="width:50px">
-                                    <col style="width: 100px">
-                                    <col style="width:auto">
-                                    <col style="width: 100px">
-                                    <col style="width:140px">
-                                    <col style="width:100px">
-                                </colgroup>
+                        
                                 <thead>
                                     <tr>
-                                        <th scope="col">선택</th>
                                         <th scope="col">받으실 분</th>
                                         <th scope="col">배송주소</th>
-                                        <th scope="col">배송유형</th>
+                                        <th scope="col">상품명</th>
                                         <th scope="col">연락처</th>
-                                        <th scope="col">관리</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="6">
-                                            <div class="no-data">
-                                                <p class="message">내역이 없습니다.</p>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <tbody class="tbody">
+                           
                                 </tbody>
                             </table>
                         </div>
                         <div class="btn-bottom-area">
-                            <button type="button" class="btn-basic-lg2 btn-navy btn-basic-delivery">
-                                <span>기본 배송지로 설정</span>
+                            <button type="button" class="btn-basic-lg2 btn-navy btn-basic-delivery" id="btn">
+                                배송조회
                             </button>
                         </div>
                     </div>
@@ -102,3 +92,34 @@
     </div>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+
+let jsonAr = '${jsonAr}'; // JSON 문자열을 포함하는 변수 선언
+let result = JSON.parse(jsonAr);
+console.log(result);
+
+
+const btn = document.querySelector("#btn");
+const tbl = document.querySelector(".tbl");
+const tbody = document.querySelector(".tbody");
+let text ="";
+
+
+result.forEach((item) => {
+console.log(${item.productName});
+ text += "<tr> <td>"+item.userName+"</td><td>"+item.deliveryAddress+"</td> <td>"+item.productName+"</td> <td>"+item.userPhone+"</td> </tr>"; 
+ 
+
+});   
+
+console.log(text);
+console.log(btn);
+
+btn.addEventListener("click",()=>{
+	tbody.innerHTML = text;
+   
+});
+
+
+</script>

@@ -55,7 +55,7 @@
                                             <a href="${pageContext.request.contextPath}/subscribeOk.subscribe">나의 구독내역</a>
                                         </li>
                                         <li class>
-                                            <a>배송 조회</a>
+                                             <a href="${pageContext.request.contextPath}/deliveryOk.delivery">배송조회</a>
                                         </li>
                                         <li class>
                                             <a>결제/취소내역</a>

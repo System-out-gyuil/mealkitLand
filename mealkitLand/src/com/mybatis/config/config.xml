@@ -17,6 +17,7 @@
 		<typeAlias type="com.mealkitland.subscribe.domain.SubscribeDTO" alias="subscribeDTO"/>
 		
 		<typeAlias type="com.mealkitland.cart.domain.CartDTO" alias="cartDTO"/>
+		<typeAlias type="com.mealkitland.delivery.domain.DeliveryDTO" alias="deliveryDTO"/>
 
 		
 		
@@ -40,6 +41,7 @@
       <mapper resource="com/mealkitland/mapper/announceMapper.xml"/>
       <mapper resource="com/mealkitland/mapper/subscribeMapper.xml"/>
       <mapper resource="com/mealkitland/mapper/cartMapper.xml"/>
+       <mapper resource="com/mealkitland/mapper/deliveryMapper.xml"/>
       
    </mappers>
    

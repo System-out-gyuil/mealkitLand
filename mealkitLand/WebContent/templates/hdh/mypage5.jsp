@@ -48,7 +48,7 @@
 													구독내역</a></li>
 											<li class><a>배송 조회</a></li>
 											<li class><a>결제/취소내역</a></li>
-											<li class><a>장바구니</a></li>
+											 <a href="${pageContext.request.contextPath}/cartOk.cart">장바구니</a>
 											<li class><a>내 게시글 수정/삭제</a></li>
 										</ul></li>
 								</ul>

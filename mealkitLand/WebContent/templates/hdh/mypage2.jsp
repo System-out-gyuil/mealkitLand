@@ -61,7 +61,7 @@
                                             <a>결제/취소내역</a>
                                         </li>
                                         <li class>
-                                            <a>장바구니</a>
+                                            <a href="${pageContext.request.contextPath}/cartOk.cart">장바구니</a>
                                         </li>
                                         <li class>
                                             <a>내 게시글 수정/삭제</a>

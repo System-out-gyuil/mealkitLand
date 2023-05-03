@@ -46,11 +46,9 @@
 											<li class><a
 												href="${pageContext.request.contextPath}/subscribeOk.subscribe">나의
 													구독내역</a></li>
-											 <a href="${pageContext.request.contextPath}/deliveryOk.delivery">배송조회</a>
-											<li class><a>결제/취소내역</a></li>
-											 <a href="${pageContext.request.contextPath}/cartOk.cart">장바구니</a>
-											<li class><a>내 게시글 수정/삭제</a></li>
-										</ul></li>
+											 <li><a href="${pageContext.request.contextPath}/deliveryOk.delivery">배송조회</a></li>
+											<li> <a href="${pageContext.request.contextPath}/cartOk.cart">장바구니</a></li>
+										</ul>
 								</ul>
 							</nav>
 						</div>

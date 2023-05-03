@@ -95,10 +95,16 @@
                         <div class="no-data-type1 id=noDataWrap">
                           
                             	<table class="tbl">
-                            		<tr><th>구독상품</th> <th>구독개수</th> <th>구독날짜</th></tr>
-                            		<tr><td><c:out value="${subscribeDTO.productName}"/></td> <td><c:out value="${subscribeDTO.subscribeCount}"/></td> <td><c:out value="${subscribeDTO.subscribeDate}"/></td></tr>
-                            	</table>
-                          
+										<thead>
+											<tr>
+												<th>상품이름</th>
+												<th>구독개수</th>
+												<th>구독날짜</th>
+											</tr>
+										</thead>
+										<tbody class="tbody"></tbody>
+									</table>
+
                             
                             
                         </div>
@@ -112,8 +118,11 @@
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>let page =  ${pageContext.request.contextPath};</script>
-<script> 
+<script>
+
+let jsonAr = '${jsonAr}'; // JSON 문자열을 포함하는 변수 선언
+let result = JSON.parse(jsonAr);
+console.log(result);
 
 
 const btn = document.querySelector(".btn");
@@ -122,9 +131,20 @@ const table = document.querySelector(".tbl");
 btn.addEventListener("click",()=>{
 	table.style.display = "block";
    
-})
-	
+});
 
 
+const tbl = document.querySelector(".tbl");
+const tbody = document.querySelector(".tbody");
+let text ="";
+result.forEach((item) => {
+console.log(${item.productName});
+ text += "<tr> <td>"+item.productName+"</td><td>"+item.subscribeCount+"</td> <td>"+item.subscribeDate+"</td> </tr>"; 
+ 
+
+});   
+
+tbody.innerHTML = text;
 </script>
+
 
